@@ -1,0 +1,20 @@
+<sly data-sly-include="/libs/wcm/core/components/init/init.jsp"></sly>
+<sly data-sly-test="${wcmmode.edit}">
+    <div class="cq-placeholder cq-marker-start" data-emptytext="Content Layout"></div>
+</sly>
+
+<sly data-sly-use.gridSystem="com.bishunaem.core.models.ContentLayoutModel" data-sly-unwrap>
+    <div class="container">
+        <div class="row">
+            <div class="${gridSystem.getGridSystem.column1}">
+                <div data-sly-resource="${'par1' @  resourceType='wcm/foundation/components/parsys'}" data-sly-unwrap></div>
+            </div>
+            <div data-sly-test="${gridSystem.getGridSystem.isSingleColumn!=true}" class="${gridSystem.getGridSystem.column2}">
+                <div data-sly-resource="${'par2' @  resourceType='wcm/foundation/components/parsys'}" data-sly-unwrap></div>
+            </div>
+            <div data-sly-test="${gridSystem.getGridSystem.isColumn3==true}" class="${gridSystem.getGridSystem.column1}">
+                <div data-sly-resource="${'par3' @  resourceType='wcm/foundation/components/parsys'}" data-sly-unwrap></div>
+            </div>
+        </div>
+    </div>
+</sly>
